@@ -96,7 +96,7 @@
                                     <outletCollection property="gestureRecognizers" destination="oyM-Cw-iHB" appends="YES" id="wwX-NO-ean"/>
                                 </connections>
                             </textView>
-                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RKn-xh-2sG">
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="no_image_selected" translatesAutoresizingMaskIntoConstraints="NO" id="RKn-xh-2sG">
                                 <rect key="frame" x="20" y="340" width="280" height="197"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <gestureRecognizers/>
@@ -216,7 +216,7 @@
                                 <rect key="frame" x="214" y="77" width="86" height="75"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LKR-ZC-iTy">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="no_image_selected" translatesAutoresizingMaskIntoConstraints="NO" id="LKR-ZC-iTy">
                                 <rect key="frame" x="20" y="371" width="280" height="161"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -262,6 +262,7 @@
     </scenes>
     <resources>
         <image name="no_image" width="312" height="312"/>
+        <image name="no_image_selected" width="336" height="233"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

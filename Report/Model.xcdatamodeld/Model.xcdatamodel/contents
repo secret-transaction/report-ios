@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="5064" systemVersion="13E28" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Report" syncable="YES">
+        <attribute name="dateCreated" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="dateLastEdited" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="detail" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="ReportImages" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="localUri" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="report" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Report" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Report" positionX="-182" positionY="-192" width="128" height="118"/>
+        <element name="ReportImages" positionX="-54" positionY="27" width="128" height="88"/>
+    </elements>
+</model>

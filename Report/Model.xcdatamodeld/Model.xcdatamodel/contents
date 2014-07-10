@@ -1,19 +1,21 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="5064" systemVersion="13E28" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
-    <entity name="Report" syncable="YES">
+    <entity name="Report" representedClassName="Report" syncable="YES">
         <attribute name="dateCreated" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="dateLastEdited" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="detail" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="images" optional="YES" toMany="YES" maxCount="9" deletionRule="Cascade" ordered="YES" destinationEntity="ReportImage" inverseName="report" inverseEntity="ReportImage" syncable="YES"/>
     </entity>
-    <entity name="ReportImages" syncable="YES">
-        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
-        <attribute name="localUri" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="report" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Report" syncable="YES"/>
+    <entity name="ReportImage" representedClassName="ReportImages" syncable="YES">
+        <attribute name="localUrl" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="remotUrl" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="uploaded" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="uploadUrl" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="report" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Report" inverseName="images" inverseEntity="Report" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Report" positionX="-182" positionY="-192" width="128" height="118"/>
-        <element name="ReportImages" positionX="-54" positionY="27" width="128" height="88"/>
+        <element name="Report" positionX="-308" positionY="-167" width="128" height="118"/>
+        <element name="ReportImage" positionX="-54" positionY="27" width="128" height="118"/>
     </elements>
 </model>

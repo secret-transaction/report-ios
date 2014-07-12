@@ -1,21 +1,21 @@
 //
-//  ReportImages.m
+//  ReportImage.m
 //  Report
 //
-//  Created by Lyndon Michael Bibera on 7/10/14.
+//  Created by Lyndon Michael Bibera on 7/12/14.
 //  Copyright (c) 2014 Secret Transaction Inc. All rights reserved.
 //
 
-#import "ReportImages.h"
+#import "ReportImage.h"
 #import "Report.h"
 
 
-@implementation ReportImages
+@implementation ReportImage
 
 @dynamic localUrl;
+@dynamic remotUrl;
 @dynamic uploaded;
 @dynamic uploadUrl;
-@dynamic remotUrl;
 @dynamic report;
 
 @end

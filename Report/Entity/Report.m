@@ -2,12 +2,12 @@
 //  Report.m
 //  Report
 //
-//  Created by Lyndon Michael Bibera on 7/10/14.
+//  Created by Lyndon Michael Bibera on 7/12/14.
 //  Copyright (c) 2014 Secret Transaction Inc. All rights reserved.
 //
 
 #import "Report.h"
-#import "ReportImages.h"
+#import "ReportImage.h"
 
 
 @implementation Report

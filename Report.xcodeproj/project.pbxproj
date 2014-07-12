@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E979B841197043B500DD6637 /* Report.m in Sources */ = {isa = PBXBuildFile; fileRef = E979B840197043B500DD6637 /* Report.m */; };
+		E979B844197043B600DD6637 /* ReportImage.m in Sources */ = {isa = PBXBuildFile; fileRef = E979B843197043B600DD6637 /* ReportImage.m */; };
+		E979B8471970486500DD6637 /* STRReportTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E979B8461970486500DD6637 /* STRReportTableViewController.m */; };
 		E97FF11A1966EDFB004C6F09 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E97FF1191966EDFB004C6F09 /* Foundation.framework */; };
 		E97FF11C1966EDFB004C6F09 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E97FF11B1966EDFB004C6F09 /* CoreGraphics.framework */; };
 		E97FF11E1966EDFB004C6F09 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E97FF11D1966EDFB004C6F09 /* UIKit.framework */; };
@@ -21,6 +24,11 @@
 		E97FF13B1966EDFB004C6F09 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E97FF11D1966EDFB004C6F09 /* UIKit.framework */; };
 		E97FF1431966EDFB004C6F09 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E97FF1411966EDFB004C6F09 /* InfoPlist.strings */; };
 		E97FF1451966EDFB004C6F09 /* ReportTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E97FF1441966EDFB004C6F09 /* ReportTests.m */; };
+		E9801BFC196ED4A80048C5E5 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E9801BFA196ED4A80048C5E5 /* Model.xcdatamodeld */; };
+		E9801BFF196EDACF0048C5E5 /* STRReportViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9801BFE196EDACF0048C5E5 /* STRReportViewController.m */; };
+		E9801C02196EDC7B0048C5E5 /* STREditArticleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9801C01196EDC7B0048C5E5 /* STREditArticleViewController.m */; };
+		E9801C05196EDCD00048C5E5 /* STREditImagesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9801C04196EDCD00048C5E5 /* STREditImagesViewController.m */; };
+		E9801C2C196EEAC00048C5E5 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9801C2B196EEAC00048C5E5 /* CoreData.framework */; };
 		E99754841968DF21006B602C /* GTLObject.m in Sources */ = {isa = PBXBuildFile; fileRef = E99754731968DF21006B602C /* GTLObject.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		E99754851968DF21006B602C /* GTLQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = E99754751968DF21006B602C /* GTLQuery.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		E99754861968DF21006B602C /* GTLBatchQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = E99754771968DF21006B602C /* GTLBatchQuery.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -63,6 +71,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E979B83F197043B500DD6637 /* Report.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Report.h; sourceTree = "<group>"; };
+		E979B840197043B500DD6637 /* Report.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Report.m; sourceTree = "<group>"; };
+		E979B842197043B600DD6637 /* ReportImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReportImage.h; sourceTree = "<group>"; };
+		E979B843197043B600DD6637 /* ReportImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReportImage.m; sourceTree = "<group>"; };
+		E979B8451970486500DD6637 /* STRReportTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STRReportTableViewController.h; sourceTree = "<group>"; };
+		E979B8461970486500DD6637 /* STRReportTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STRReportTableViewController.m; sourceTree = "<group>"; };
 		E97FF1161966EDFB004C6F09 /* Report.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Report.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E97FF1191966EDFB004C6F09 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		E97FF11B1966EDFB004C6F09 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -74,14 +88,22 @@
 		E97FF1281966EDFB004C6F09 /* STRAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = STRAppDelegate.h; sourceTree = "<group>"; };
 		E97FF1291966EDFB004C6F09 /* STRAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = STRAppDelegate.m; sourceTree = "<group>"; };
 		E97FF12C1966EDFB004C6F09 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		E97FF12E1966EDFB004C6F09 /* STRViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = STRViewController.h; sourceTree = "<group>"; };
-		E97FF12F1966EDFB004C6F09 /* STRViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = STRViewController.m; sourceTree = "<group>"; };
+		E97FF12E1966EDFB004C6F09 /* STRViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = STRViewController.h; path = ../STRViewController.h; sourceTree = "<group>"; };
+		E97FF12F1966EDFB004C6F09 /* STRViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = STRViewController.m; path = ../STRViewController.m; sourceTree = "<group>"; };
 		E97FF1311966EDFB004C6F09 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		E97FF1371966EDFB004C6F09 /* ReportTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReportTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E97FF1381966EDFB004C6F09 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		E97FF1401966EDFB004C6F09 /* ReportTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ReportTests-Info.plist"; sourceTree = "<group>"; };
 		E97FF1421966EDFB004C6F09 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		E97FF1441966EDFB004C6F09 /* ReportTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReportTests.m; sourceTree = "<group>"; };
+		E9801BFB196ED4A80048C5E5 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		E9801BFD196EDACF0048C5E5 /* STRReportViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STRReportViewController.h; sourceTree = "<group>"; };
+		E9801BFE196EDACF0048C5E5 /* STRReportViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STRReportViewController.m; sourceTree = "<group>"; };
+		E9801C00196EDC7B0048C5E5 /* STREditArticleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STREditArticleViewController.h; sourceTree = "<group>"; };
+		E9801C01196EDC7B0048C5E5 /* STREditArticleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STREditArticleViewController.m; sourceTree = "<group>"; };
+		E9801C03196EDCD00048C5E5 /* STREditImagesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STREditImagesViewController.h; sourceTree = "<group>"; };
+		E9801C04196EDCD00048C5E5 /* STREditImagesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STREditImagesViewController.m; sourceTree = "<group>"; };
+		E9801C2B196EEAC00048C5E5 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		E99754701968DEDE006B602C /* GTLDefines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTLDefines.h; sourceTree = "<group>"; };
 		E99754721968DF21006B602C /* GTLObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTLObject.h; sourceTree = "<group>"; };
 		E99754731968DF21006B602C /* GTLObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTLObject.m; sourceTree = "<group>"; };
@@ -149,6 +171,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E9801C2C196EEAC00048C5E5 /* CoreData.framework in Frameworks */,
 				E97FF11C1966EDFB004C6F09 /* CoreGraphics.framework in Frameworks */,
 				E97FF11E1966EDFB004C6F09 /* UIKit.framework in Frameworks */,
 				E97FF11A1966EDFB004C6F09 /* Foundation.framework in Frameworks */,
@@ -190,6 +213,7 @@
 		E97FF1181966EDFB004C6F09 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E9801C2B196EEAC00048C5E5 /* CoreData.framework */,
 				E97FF1191966EDFB004C6F09 /* Foundation.framework */,
 				E97FF11B1966EDFB004C6F09 /* CoreGraphics.framework */,
 				E97FF11D1966EDFB004C6F09 /* UIKit.framework */,
@@ -201,12 +225,12 @@
 		E97FF11F1966EDFB004C6F09 /* Report */ = {
 			isa = PBXGroup;
 			children = (
+				E9801C06196EE3950048C5E5 /* Entity */,
+				E9801BF6196ED3A50048C5E5 /* ViewController */,
+				E9801BF5196ED3990048C5E5 /* View */,
 				E997546D1968DDDA006B602C /* Client */,
-				E97FF1281966EDFB004C6F09 /* STRAppDelegate.h */,
-				E97FF1291966EDFB004C6F09 /* STRAppDelegate.m */,
 				E97FF12B1966EDFB004C6F09 /* Main.storyboard */,
-				E97FF12E1966EDFB004C6F09 /* STRViewController.h */,
-				E97FF12F1966EDFB004C6F09 /* STRViewController.m */,
+				E9801BFA196ED4A80048C5E5 /* Model.xcdatamodeld */,
 				E97FF1311966EDFB004C6F09 /* Images.xcassets */,
 				E97FF1201966EDFB004C6F09 /* Supporting Files */,
 			);
@@ -216,6 +240,8 @@
 		E97FF1201966EDFB004C6F09 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				E97FF1281966EDFB004C6F09 /* STRAppDelegate.h */,
+				E97FF1291966EDFB004C6F09 /* STRAppDelegate.m */,
 				E97FF1211966EDFB004C6F09 /* Report-Info.plist */,
 				E97FF1221966EDFB004C6F09 /* InfoPlist.strings */,
 				E97FF1251966EDFB004C6F09 /* main.m */,
@@ -240,6 +266,41 @@
 				E97FF1411966EDFB004C6F09 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E9801BF5196ED3990048C5E5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E9801BF6196ED3A50048C5E5 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				E97FF12E1966EDFB004C6F09 /* STRViewController.h */,
+				E97FF12F1966EDFB004C6F09 /* STRViewController.m */,
+				E9801BFD196EDACF0048C5E5 /* STRReportViewController.h */,
+				E9801BFE196EDACF0048C5E5 /* STRReportViewController.m */,
+				E9801C00196EDC7B0048C5E5 /* STREditArticleViewController.h */,
+				E9801C01196EDC7B0048C5E5 /* STREditArticleViewController.m */,
+				E9801C03196EDCD00048C5E5 /* STREditImagesViewController.h */,
+				E9801C04196EDCD00048C5E5 /* STREditImagesViewController.m */,
+				E979B8451970486500DD6637 /* STRReportTableViewController.h */,
+				E979B8461970486500DD6637 /* STRReportTableViewController.m */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		E9801C06196EE3950048C5E5 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				E979B83F197043B500DD6637 /* Report.h */,
+				E979B840197043B500DD6637 /* Report.m */,
+				E979B842197043B600DD6637 /* ReportImage.h */,
+				E979B843197043B600DD6637 /* ReportImage.m */,
+			);
+			path = Entity;
 			sourceTree = "<group>";
 		};
 		E997546D1968DDDA006B602C /* Client */ = {
@@ -474,14 +535,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				E99754CD1968E118006B602C /* GTLQueryStatus.m in Sources */,
+				E979B844197043B600DD6637 /* ReportImage.m in Sources */,
 				E99754891968DF21006B602C /* GTLUploadParameters.m in Sources */,
 				E99754B01968DF5D006B602C /* GTMHTTPUploadFetcher.m in Sources */,
+				E979B841197043B500DD6637 /* Report.m in Sources */,
 				E997548C1968DF21006B602C /* GTLRuntimeCommon.m in Sources */,
 				E997549A1968DF3A006B602C /* GTLBase64.m in Sources */,
+				E9801BFF196EDACF0048C5E5 /* STRReportViewController.m in Sources */,
 				E99754D01968E118006B602C /* GTLStatusConstants.m in Sources */,
 				E99754841968DF21006B602C /* GTLObject.m in Sources */,
 				E997548B1968DF21006B602C /* GTLErrorObject.m in Sources */,
 				E99754871968DF21006B602C /* GTLService.m in Sources */,
+				E9801C05196EDCD00048C5E5 /* STREditImagesViewController.m in Sources */,
 				E99754861968DF21006B602C /* GTLBatchQuery.m in Sources */,
 				E99754B11968DF5D006B602C /* GTMGatherInputStream.m in Sources */,
 				E997548A1968DF21006B602C /* GTLDateTime.m in Sources */,
@@ -495,11 +560,14 @@
 				E99754BA1968DF76006B602C /* GTMOAuth2SignIn.m in Sources */,
 				E99754AF1968DF5D006B602C /* GTMHTTPFetchHistory.m in Sources */,
 				E99754AD1968DF5D006B602C /* GTMHTTPFetcher.m in Sources */,
+				E9801C02196EDC7B0048C5E5 /* STREditArticleViewController.m in Sources */,
 				E99754851968DF21006B602C /* GTLQuery.m in Sources */,
 				E99754B21968DF5D006B602C /* GTMMIMEDocument.m in Sources */,
 				E97FF12A1966EDFB004C6F09 /* STRAppDelegate.m in Sources */,
 				E97FF1301966EDFB004C6F09 /* STRViewController.m in Sources */,
 				E99754D11968E118006B602C /* GTLStatusStatus.m in Sources */,
+				E9801BFC196ED4A80048C5E5 /* Model.xcdatamodeld in Sources */,
+				E979B8471970486500DD6637 /* STRReportTableViewController.m in Sources */,
 				E97FF1261966EDFB004C6F09 /* main.m in Sources */,
 				E99754B91968DF76006B602C /* GTMOAuth2Authentication.m in Sources */,
 				E99754AE1968DF5D006B602C /* GTMHTTPFetcherLogging.m in Sources */,
@@ -722,6 +790,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		E9801BFA196ED4A80048C5E5 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				E9801BFB196ED4A80048C5E5 /* Model.xcdatamodel */,
+			);
+			currentVersion = E9801BFB196ED4A80048C5E5 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = E97FF10E1966EDFB004C6F09 /* Project object */;
 }

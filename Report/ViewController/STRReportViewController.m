@@ -9,6 +9,7 @@
 #import "STRAppDelegate.h"
 #import "STRReportViewController.h"
 #import "Report.h"
+#import "STREditArticleViewController.h"
 
 @interface STRReportViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
@@ -42,7 +43,7 @@
     STRAppDelegate *ad = [[UIApplication sharedApplication] delegate];
     NSManagedObjectContext *context = ad.managedObjectContext;
     
-    Report *report = [NSEntityDescription insertNewObjectForEntityForName:@"Report" inManagedObjectContext:context];
+    Report *report = self.report;
     report.title = self.titleLabel.text;
     report.detail = self.detailText.text;
     
@@ -54,6 +55,18 @@
     } else {
         self.titleLabel.text = @"";
         self.detailText.text = @"";
+    }
+}
+
+#pragma mark - Navigation
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    
+    if ([segue.identifier isEqualToString:@"ReportToArticleSegue"] && [segue.destinationViewController isKindOfClass:[STREditArticleViewController class]]) {
+        NSLog(@"ReportToArticleSegue");
+        STREditArticleViewController *dvc = segue.destinationViewController;
+        dvc.report = self.report;
     }
 }
 

@@ -27,6 +27,8 @@
 - (IBAction)addReport:(UIBarButtonItem *)sender
 {
     self.selectedReport = [NSEntityDescription insertNewObjectForEntityForName:@"Report" inManagedObjectContext:self.context];
+    self.selectedReport.title = @"My Article";
+    self.selectedReport.detail = @"Some Details...";
     [self performSegueWithIdentifier:@"EditReportSegue" sender:self];
 }
 

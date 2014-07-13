@@ -14,25 +14,21 @@
 
 @implementation STREditArticleViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    if (self.report) {
+        self.editTitle.text = self.report.title;
+        self.editDetails.text = self.report.detail;
+    }
 }
 
-- (void)didReceiveMemoryWarning
+- (IBAction)done:(UIBarButtonItem *)sender
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    NSLog(@"Done");
+    self.report.title = self.editTitle.text;
+    self.report.detail = self.editDetails.text;
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 /*

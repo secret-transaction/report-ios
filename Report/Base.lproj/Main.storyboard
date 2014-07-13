@@ -168,7 +168,17 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Article" id="ewP-7c-BBP"/>
+                    <navigationItem key="navigationItem" title="Article" id="ewP-7c-BBP">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="XXF-Df-O0F">
+                            <connections>
+                                <action selector="done:" destination="1pe-2u-SAR" id="mbX-SW-b55"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="editDetails" destination="Qau-dN-uQg" id="NR0-04-BpC"/>
+                        <outlet property="editTitle" destination="U7X-0K-fMv" id="31S-MN-3rd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q5H-w1-MvB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

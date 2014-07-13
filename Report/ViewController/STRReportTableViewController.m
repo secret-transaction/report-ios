@@ -8,6 +8,9 @@
 
 #import "STRReportTableViewController.h"
 #import "STRAppDelegate.h"
+#import "STRReportTableViewCell.h"
+#import "Report.h"
+#import "STRReportViewController.h"
 
 @interface STRReportTableViewController ()
 
@@ -18,6 +21,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.context =  [(STRAppDelegate *)[[UIApplication sharedApplication] delegate] managedObjectContext];
+}
+
+- (IBAction)addReport:(UIBarButtonItem *)sender
+{
+    self.selectedReport = [NSEntityDescription insertNewObjectForEntityForName:@"Report" inManagedObjectContext:self.context];
+    [self performSegueWithIdentifier:@"EditReportSegue" sender:self];
 }
 
 #pragma mark - Table view data source
@@ -35,38 +45,12 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"defaultCell" forIndexPath:indexPath];
+    STRReportTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"defaultCell" forIndexPath:indexPath];
+    
+    Report *report = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    cell.title.text = report.title;
     return cell;
 }
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
 
 #pragma mark - Fetched Results Controller
 
@@ -98,15 +82,16 @@
     return _fetchedResultsController;
 }
 
-/*
 #pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    
+    if ([segue.identifier isEqualToString:@"EditReportSegue"] && [segue.destinationViewController isKindOfClass:[STRReportViewController class]]) {
+        NSLog(@"EditReport");
+        STRReportViewController *dvc = segue.destinationViewController;
+        dvc.report = self.selectedReport;
+    }
 }
-*/
 
 @end

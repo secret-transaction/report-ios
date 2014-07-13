@@ -7,9 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Report.h"
 
 @interface STRReportTableViewController : UITableViewController
 
+@property (strong, nonatomic) NSManagedObjectContext *context;
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
+@property (strong, nonatomic) Report *selectedReport;
 
 @end

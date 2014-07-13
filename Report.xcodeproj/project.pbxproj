@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E96ED36D1970F3EE005F6011 /* STRReportTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E96ED36C1970F3EE005F6011 /* STRReportTableViewCell.m */; };
 		E979B841197043B500DD6637 /* Report.m in Sources */ = {isa = PBXBuildFile; fileRef = E979B840197043B500DD6637 /* Report.m */; };
 		E979B844197043B600DD6637 /* ReportImage.m in Sources */ = {isa = PBXBuildFile; fileRef = E979B843197043B600DD6637 /* ReportImage.m */; };
 		E979B8471970486500DD6637 /* STRReportTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E979B8461970486500DD6637 /* STRReportTableViewController.m */; };
@@ -71,6 +72,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E96ED36B1970F3EE005F6011 /* STRReportTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STRReportTableViewCell.h; sourceTree = "<group>"; };
+		E96ED36C1970F3EE005F6011 /* STRReportTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STRReportTableViewCell.m; sourceTree = "<group>"; };
 		E979B83F197043B500DD6637 /* Report.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Report.h; sourceTree = "<group>"; };
 		E979B840197043B500DD6637 /* Report.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Report.m; sourceTree = "<group>"; };
 		E979B842197043B600DD6637 /* ReportImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReportImage.h; sourceTree = "<group>"; };
@@ -271,6 +274,8 @@
 		E9801BF5196ED3990048C5E5 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				E96ED36B1970F3EE005F6011 /* STRReportTableViewCell.h */,
+				E96ED36C1970F3EE005F6011 /* STRReportTableViewCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -549,6 +554,7 @@
 				E9801C05196EDCD00048C5E5 /* STREditImagesViewController.m in Sources */,
 				E99754861968DF21006B602C /* GTLBatchQuery.m in Sources */,
 				E99754B11968DF5D006B602C /* GTMGatherInputStream.m in Sources */,
+				E96ED36D1970F3EE005F6011 /* STRReportTableViewCell.m in Sources */,
 				E997548A1968DF21006B602C /* GTLDateTime.m in Sources */,
 				E99754971968DF3A006B602C /* GTLFramework.m in Sources */,
 				E99754991968DF3A006B602C /* GTLUtilities.m in Sources */,

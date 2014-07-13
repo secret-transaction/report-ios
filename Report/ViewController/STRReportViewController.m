@@ -12,7 +12,6 @@
 #import "STREditArticleViewController.h"
 
 @interface STRReportViewController ()
-@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UITextView *detailText;
 
 @end
@@ -23,7 +22,7 @@
 {
     [super viewDidLoad];
     if (self.report) {
-        self.titleLabel.text = self.report.title;
+        self.title = self.report.title;
         self.detailText.text = self.report.detail;
     }
 }
@@ -44,7 +43,6 @@
     NSManagedObjectContext *context = ad.managedObjectContext;
     
     Report *report = self.report;
-    report.title = self.titleLabel.text;
     report.detail = self.detailText.text;
     
     NSError *error = nil;
@@ -53,7 +51,6 @@
     if (error) {
         NSLog(@"Ooops...something went wrong");
     } else {
-        self.titleLabel.text = @"";
         self.detailText.text = @"";
     }
 }

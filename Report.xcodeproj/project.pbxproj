@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E91B1F121972EAB600917090 /* STRDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E91B1F111972EAB600917090 /* STRDataManager.m */; };
 		E96ED36D1970F3EE005F6011 /* STRReportTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E96ED36C1970F3EE005F6011 /* STRReportTableViewCell.m */; };
 		E979B841197043B500DD6637 /* Report.m in Sources */ = {isa = PBXBuildFile; fileRef = E979B840197043B500DD6637 /* Report.m */; };
 		E979B844197043B600DD6637 /* ReportImage.m in Sources */ = {isa = PBXBuildFile; fileRef = E979B843197043B600DD6637 /* ReportImage.m */; };
@@ -72,6 +73,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E91B1F101972EAB600917090 /* STRDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STRDataManager.h; sourceTree = "<group>"; };
+		E91B1F111972EAB600917090 /* STRDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STRDataManager.m; sourceTree = "<group>"; };
 		E96ED36B1970F3EE005F6011 /* STRReportTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STRReportTableViewCell.h; sourceTree = "<group>"; };
 		E96ED36C1970F3EE005F6011 /* STRReportTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STRReportTableViewCell.m; sourceTree = "<group>"; };
 		E979B83F197043B500DD6637 /* Report.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Report.h; sourceTree = "<group>"; };
@@ -194,6 +197,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E91B1F0F1972EA8400917090 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				E91B1F101972EAB600917090 /* STRDataManager.h */,
+				E91B1F111972EAB600917090 /* STRDataManager.m */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
 		E97FF10D1966EDFB004C6F09 = {
 			isa = PBXGroup;
 			children = (
@@ -228,6 +240,7 @@
 		E97FF11F1966EDFB004C6F09 /* Report */ = {
 			isa = PBXGroup;
 			children = (
+				E91B1F0F1972EA8400917090 /* Utility */,
 				E9801C06196EE3950048C5E5 /* Entity */,
 				E9801BF6196ED3A50048C5E5 /* ViewController */,
 				E9801BF5196ED3990048C5E5 /* View */,
@@ -548,6 +561,7 @@
 				E997549A1968DF3A006B602C /* GTLBase64.m in Sources */,
 				E9801BFF196EDACF0048C5E5 /* STRReportViewController.m in Sources */,
 				E99754D01968E118006B602C /* GTLStatusConstants.m in Sources */,
+				E91B1F121972EAB600917090 /* STRDataManager.m in Sources */,
 				E99754841968DF21006B602C /* GTLObject.m in Sources */,
 				E997548B1968DF21006B602C /* GTLErrorObject.m in Sources */,
 				E99754871968DF21006B602C /* GTLService.m in Sources */,

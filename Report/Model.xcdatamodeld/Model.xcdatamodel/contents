@@ -4,18 +4,20 @@
         <attribute name="dateCreated" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="dateLastEdited" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="detail" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="remoteId" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="images" optional="YES" toMany="YES" maxCount="9" deletionRule="Cascade" ordered="YES" destinationEntity="ReportImage" inverseName="report" inverseEntity="ReportImage" syncable="YES"/>
     </entity>
     <entity name="ReportImage" representedClassName="ReportImage" syncable="YES">
         <attribute name="localUrl" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="remoteId" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="remotUrl" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="uploaded" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="uploadUrl" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="report" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Report" inverseName="images" inverseEntity="Report" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Report" positionX="-308" positionY="-167" width="128" height="118"/>
-        <element name="ReportImage" positionX="-54" positionY="27" width="128" height="118"/>
+        <element name="Report" positionX="-308" positionY="-167" width="128" height="135"/>
+        <element name="ReportImage" positionX="-54" positionY="27" width="128" height="135"/>
     </elements>
 </model>

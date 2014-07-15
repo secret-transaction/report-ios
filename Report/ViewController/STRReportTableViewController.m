@@ -6,11 +6,11 @@
 //  Copyright (c) 2014 Secret Transaction Inc. All rights reserved.
 //
 
-#import "STRReportTableViewController.h"
-#import "STRAppDelegate.h"
-#import "STRReportTableViewCell.h"
 #import "Report.h"
+#import "STRReportTableViewCell.h"
+#import "STRReportTableViewController.h"
 #import "STRReportViewController.h"
+#import "STRDataManager.h"
 
 @interface STRReportTableViewController ()
 
@@ -21,7 +21,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.context =  [(STRAppDelegate *)[[UIApplication sharedApplication] delegate] managedObjectContext];
+    self.context =  [[STRDataManager sharedInstance] managedObjectContext];
 }
 
 - (IBAction)addReport:(UIBarButtonItem *)sender
@@ -62,17 +62,13 @@
         return _fetchedResultsController;
     }
     
-    STRAppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
-    
-    NSManagedObjectContext *context = appDelegate.managedObjectContext;
-    
     
     NSFetchRequest *request = [NSFetchRequest new];
-    [request setEntity:[NSEntityDescription entityForName:@"Report" inManagedObjectContext:context]];
+    [request setEntity:[NSEntityDescription entityForName:@"Report" inManagedObjectContext:self.context]];
     NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"dateCreated" ascending:NO];
     request.sortDescriptors = @[sortDescriptor];
     
-    NSFetchedResultsController *fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:request managedObjectContext:context sectionNameKeyPath:@"title" cacheName:@"Master"];
+    NSFetchedResultsController *fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:request managedObjectContext:self.context sectionNameKeyPath:@"title" cacheName:@"Master"];
     
     NSError *error = nil;
     if (![fetchedResultsController performFetch:&error]) {

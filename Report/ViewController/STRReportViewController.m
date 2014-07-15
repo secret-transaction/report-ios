@@ -9,6 +9,7 @@
 #import "STRAppDelegate.h"
 #import "STRReportViewController.h"
 #import "Report.h"
+#import "STRDataManager.h"
 #import "STREditArticleViewController.h"
 
 @interface STRReportViewController ()
@@ -39,8 +40,7 @@
 
 - (IBAction)save:(UIBarButtonItem *)sender
 {
-    STRAppDelegate *ad = [[UIApplication sharedApplication] delegate];
-    NSManagedObjectContext *context = ad.managedObjectContext;
+    NSManagedObjectContext *context = [[STRDataManager sharedInstance] managedObjectContext];
     
     Report *report = self.report;
     report.detail = self.detailText.text;

@@ -10,135 +10,114 @@
 
 @implementation STRDataManager
 
+@synthesize managedObjectContext = _managedObjectContext;
+@synthesize managedObjectModel = _managedObjectModel;
 @synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
-@synthesize mainObjectContext = _mainObjectContext;
-@synthesize objectModel = _objectModel;
 
-NSString * const kDataManagerBundleName = @"Model";
-NSString * const kDataManagerModelName = @"Model";
-NSString * const kDataManagerSQLiteName = @"ReportApp.sqlite";
-
-NSString * const DataManagerDidSaveNotification = @"DataManagerDidSaveNotification";
-NSString * const DataManagerDidSaveFailedNotification = @"DataManagerDidSaveFailedNotification";
-
-
+//copied from http://www.galloway.me.uk/tutorials/singleton-classes/
 + (STRDataManager*)sharedInstance
 {
-	static dispatch_once_t pred;
-	static STRDataManager *sharedInstance = nil;
-    
-	dispatch_once(&pred, ^{ sharedInstance = [[self alloc] init]; });
-	return sharedInstance;
+    static STRDataManager *sharedMyManager = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        sharedMyManager = [[self alloc] init];
+    });
+    return sharedMyManager;
 }
 
-- (NSManagedObjectModel*)objectModel
+- (void)saveContext
 {
-	if (_objectModel)
-		return _objectModel;
-    
-	NSBundle *bundle = [NSBundle mainBundle];
-	if (kDataManagerBundleName) {
-		NSString *bundlePath = [[NSBundle mainBundle] pathForResource:kDataManagerBundleName ofType:@"bundle"];
-		bundle = [NSBundle bundleWithPath:bundlePath];
-	}
-	NSString *modelPath = [bundle pathForResource:kDataManagerModelName ofType:@"momd"];
-	_objectModel = [[NSManagedObjectModel alloc] initWithContentsOfURL:[NSURL fileURLWithPath:modelPath]];
-    
-	return _objectModel;
+    NSError *error = nil;
+    NSManagedObjectContext *managedObjectContext = self.managedObjectContext;
+    if (managedObjectContext != nil) {
+        if ([managedObjectContext hasChanges] && ![managedObjectContext save:&error]) {
+            // Replace this implementation with code to handle the error appropriately.
+            // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+            NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+            abort();
+        }
+    }
 }
 
-- (NSPersistentStoreCoordinator*)persistentStoreCoordinator {
-	if (_persistentStoreCoordinator)
-		return _persistentStoreCoordinator;
+#pragma mark - Core Data stack
+
+// Returns the managed object context for the application.
+// If the context doesn't already exist, it is created and bound to the persistent store coordinator for the application.
+- (NSManagedObjectContext *)managedObjectContext
+{
+    if (_managedObjectContext != nil) {
+        return _managedObjectContext;
+    }
     
-	// Get the paths to the SQLite file
-	NSString *storePath = [[self sharedDocumentsPath] stringByAppendingPathComponent:kDataManagerSQLiteName];
-	NSURL *storeURL = [NSURL fileURLWithPath:storePath];
-    
-	// Define the Core Data version migration options
-	NSDictionary *options = [NSDictionary dictionaryWithObjectsAndKeys:
-                             [NSNumber numberWithBool:YES], NSMigratePersistentStoresAutomaticallyOption,
-                             [NSNumber numberWithBool:YES], NSInferMappingModelAutomaticallyOption,
-                             nil];
-    
-	// Attempt to load the persistent store
-	NSError *error = nil;
-	_persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:self.objectModel];
-	if (![_persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType
-                                                   configuration:nil
-                                                             URL:storeURL
-                                                         options:options
-                                                           error:&error]) {
-		NSLog(@"Fatal error while creating persistent store: %@", error);
-		abort();
-	}
-    
-	return _persistentStoreCoordinator;
+    NSPersistentStoreCoordinator *coordinator = [self persistentStoreCoordinator];
+    if (coordinator != nil) {
+        _managedObjectContext = [[NSManagedObjectContext alloc] init];
+        [_managedObjectContext setPersistentStoreCoordinator:coordinator];
+    }
+    return _managedObjectContext;
 }
 
-- (NSManagedObjectContext*)mainObjectContext {
-	if (_mainObjectContext)
-		return _mainObjectContext;
-    
-	// Create the main context only on the main thread
-	if (![NSThread isMainThread]) {
-		[self performSelectorOnMainThread:@selector(mainObjectContext)
-                               withObject:nil
-                            waitUntilDone:YES];
-		return _mainObjectContext;
-	}
-    
-	_mainObjectContext = [[NSManagedObjectContext alloc] init];
-	[_mainObjectContext setPersistentStoreCoordinator:self.persistentStoreCoordinator];
-    
-	return _mainObjectContext;
+// Returns the managed object model for the application.
+// If the model doesn't already exist, it is created from the application's model.
+- (NSManagedObjectModel *)managedObjectModel
+{
+    if (_managedObjectModel != nil) {
+        return _managedObjectModel;
+    }
+    NSURL *modelURL = [[NSBundle mainBundle] URLForResource:@"Model" withExtension:@"momd"];
+    _managedObjectModel = [[NSManagedObjectModel alloc] initWithContentsOfURL:modelURL];
+    return _managedObjectModel;
 }
 
-- (BOOL)save {
-	if (![self.mainObjectContext hasChanges])
-		return YES;
+// Returns the persistent store coordinator for the application.
+// If the coordinator doesn't already exist, it is created and the application's store added to it.
+- (NSPersistentStoreCoordinator *)persistentStoreCoordinator
+{
+    if (_persistentStoreCoordinator != nil) {
+        return _persistentStoreCoordinator;
+    }
     
-	NSError *error = nil;
-	if (![self.mainObjectContext save:&error]) {
-		NSLog(@"Error while saving: %@\n%@", [error localizedDescription], [error userInfo]);
-		return NO;
-	}
-	return YES;
+    NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:@"ReportApp.sqlite"];
+    
+    NSError *error = nil;
+    _persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:[self managedObjectModel]];
+    if (![_persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeURL options:nil error:&error]) {
+        /*
+         Replace this implementation with code to handle the error appropriately.
+         
+         abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+         
+         Typical reasons for an error here include:
+         * The persistent store is not accessible;
+         * The schema for the persistent store is incompatible with current managed object model.
+         Check the error message to determine what the actual problem was.
+         
+         
+         If the persistent store is not accessible, there is typically something wrong with the file path. Often, a file URL is pointing into the application's resources directory instead of a writeable directory.
+         
+         If you encounter schema incompatibility errors during development, you can reduce their frequency by:
+         * Simply deleting the existing store:
+         [[NSFileManager defaultManager] removeItemAtURL:storeURL error:nil]
+         
+         * Performing automatic lightweight migration by passing the following dictionary as the options parameter:
+         @{NSMigratePersistentStoresAutomaticallyOption:@YES, NSInferMappingModelAutomaticallyOption:@YES}
+         
+         Lightweight migration will only work for a limited set of schema changes; consult "Core Data Model Versioning and Data Migration Programming Guide" for details.
+         
+         */
+        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+        abort();
+    }
+    
+    return _persistentStoreCoordinator;
 }
 
-- (NSString*)sharedDocumentsPath {
-	static NSString *SharedDocumentsPath = nil;
-	if (SharedDocumentsPath)
-		return SharedDocumentsPath;
-    
-	// Compose a path to the <Library>/Database directory
-	NSString *libraryPath = [NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES) objectAtIndex:0];
-	SharedDocumentsPath = [libraryPath stringByAppendingPathComponent:@"Database"];
-    
-	// Ensure the database directory exists
-	NSFileManager *manager = [NSFileManager defaultManager];
-	BOOL isDirectory;
-	if (![manager fileExistsAtPath:SharedDocumentsPath isDirectory:&isDirectory] || !isDirectory) {
-		NSError *error = nil;
-		NSDictionary *attr = [NSDictionary dictionaryWithObject:NSFileProtectionComplete
-                                                         forKey:NSFileProtectionKey];
-		[manager createDirectoryAtPath:SharedDocumentsPath
-		   withIntermediateDirectories:YES
-                            attributes:attr
-                                 error:&error];
-		if (error)
-			NSLog(@"Error creating directory path: %@", [error localizedDescription]);
-	}
-    
-	return SharedDocumentsPath;
-}
+#pragma mark - Application's Documents directory
 
-- (NSManagedObjectContext*)managedObjectContext {
-	NSManagedObjectContext *ctx = [[NSManagedObjectContext alloc] init];
-	[ctx setPersistentStoreCoordinator:self.persistentStoreCoordinator];
-    
-	return ctx;
+// Returns the URL to the application's Documents directory.
+- (NSURL *)applicationDocumentsDirectory
+{
+    return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
 }
-
 
 @end

@@ -16,7 +16,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VIY-hP-n8h">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VIY-hP-n8h">
                                 <rect key="frame" x="114" y="518" width="93" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Status Check">
@@ -26,25 +26,25 @@
                                     <action selector="statusCheck" destination="vXZ-lx-hvc" eventType="touchDown" id="eiu-xR-TqQ"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Title:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LHL-fJ-P5y">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LHL-fJ-P5y">
                                 <rect key="frame" x="20" y="273" width="280" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Client ID:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xrQ-lw-RVt">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Client ID:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xrQ-lw-RVt">
                                 <rect key="frame" x="20" y="244" width="280" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Message:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ebs-rf-cht">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Message:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ebs-rf-cht">
                                 <rect key="frame" x="20" y="302" width="280" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Latest Version:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oz0-IN-m2d">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Latest Version:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oz0-IN-m2d">
                                 <rect key="frame" x="20" y="331" width="280" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -52,14 +52,6 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="Oz0-IN-m2d" firstAttribute="top" secondItem="ebs-rf-cht" secondAttribute="bottom" constant="8" id="8RH-v0-H6Z"/>
-                            <constraint firstAttribute="centerX" secondItem="VIY-hP-n8h" secondAttribute="centerX" constant="-0.5" id="FxN-7P-nkA"/>
-                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="VIY-hP-n8h" secondAttribute="bottom" constant="20" id="JU6-zi-hsa"/>
-                            <constraint firstItem="ebs-rf-cht" firstAttribute="top" secondItem="LHL-fJ-P5y" secondAttribute="bottom" constant="8" id="fOL-sa-Jfj"/>
-                            <constraint firstItem="LHL-fJ-P5y" firstAttribute="top" secondItem="xrQ-lw-RVt" secondAttribute="bottom" constant="8" id="pAt-yU-Dld"/>
-                            <constraint firstAttribute="centerY" secondItem="LHL-fJ-P5y" secondAttribute="centerY" constant="0.5" id="sPz-Rw-Awf"/>
-                        </constraints>
                     </view>
                     <connections>
                         <outlet property="clientIdLabel" destination="xrQ-lw-RVt" id="qjm-cG-uuN"/>
@@ -70,7 +62,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="789" y="144"/>
+            <point key="canvasLocation" x="-119" y="1028"/>
         </scene>
         <!--Report View Controller - Report-->
         <scene sceneID="k27-In-r7b">
@@ -137,7 +129,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-274" y="-8"/>
+            <point key="canvasLocation" x="118" y="-8"/>
         </scene>
         <!--Edit Article View Controller - Article-->
         <scene sceneID="bLy-4Y-YFP">
@@ -182,7 +174,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q5H-w1-MvB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="263" y="-375"/>
+            <point key="canvasLocation" x="655" y="-375"/>
         </scene>
         <!--Edit Images View Controller - Images-->
         <scene sceneID="rpc-Nf-7u6">
@@ -243,7 +235,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8gR-4v-B10" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="263" y="311"/>
+            <point key="canvasLocation" x="655" y="311"/>
         </scene>
         <!--Report Table View Controller-->
         <scene sceneID="nbT-7E-z1q">
@@ -289,6 +281,7 @@
                     </navigationItem>
                     <connections>
                         <segue destination="Oa3-PK-8vX" kind="push" identifier="EditReportSegue" id="qoP-1I-NyM"/>
+                        <segue destination="vXZ-lx-hvc" kind="modal" identifier="SurpriseSegue" id="TNw-2n-2Ev"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Sy-nO-ofb" userLabel="First Responder" sceneMemberID="firstResponder"/>

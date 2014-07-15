@@ -8,9 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		E91B1F121972EAB600917090 /* STRDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E91B1F111972EAB600917090 /* STRDataManager.m */; };
+		E93F796D197587FF004D813A /* Report.m in Sources */ = {isa = PBXBuildFile; fileRef = E93F796C197587FF004D813A /* Report.m */; };
+		E93F797019758800004D813A /* ReportImage.m in Sources */ = {isa = PBXBuildFile; fileRef = E93F796F19758800004D813A /* ReportImage.m */; };
 		E96ED36D1970F3EE005F6011 /* STRReportTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E96ED36C1970F3EE005F6011 /* STRReportTableViewCell.m */; };
-		E979B841197043B500DD6637 /* Report.m in Sources */ = {isa = PBXBuildFile; fileRef = E979B840197043B500DD6637 /* Report.m */; };
-		E979B844197043B600DD6637 /* ReportImage.m in Sources */ = {isa = PBXBuildFile; fileRef = E979B843197043B600DD6637 /* ReportImage.m */; };
 		E979B8471970486500DD6637 /* STRReportTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E979B8461970486500DD6637 /* STRReportTableViewController.m */; };
 		E97FF11A1966EDFB004C6F09 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E97FF1191966EDFB004C6F09 /* Foundation.framework */; };
 		E97FF11C1966EDFB004C6F09 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E97FF11B1966EDFB004C6F09 /* CoreGraphics.framework */; };
@@ -75,12 +75,12 @@
 /* Begin PBXFileReference section */
 		E91B1F101972EAB600917090 /* STRDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STRDataManager.h; sourceTree = "<group>"; };
 		E91B1F111972EAB600917090 /* STRDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STRDataManager.m; sourceTree = "<group>"; };
+		E93F796B197587FF004D813A /* Report.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Report.h; sourceTree = "<group>"; };
+		E93F796C197587FF004D813A /* Report.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Report.m; sourceTree = "<group>"; };
+		E93F796E19758800004D813A /* ReportImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReportImage.h; sourceTree = "<group>"; };
+		E93F796F19758800004D813A /* ReportImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReportImage.m; sourceTree = "<group>"; };
 		E96ED36B1970F3EE005F6011 /* STRReportTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STRReportTableViewCell.h; sourceTree = "<group>"; };
 		E96ED36C1970F3EE005F6011 /* STRReportTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STRReportTableViewCell.m; sourceTree = "<group>"; };
-		E979B83F197043B500DD6637 /* Report.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Report.h; sourceTree = "<group>"; };
-		E979B840197043B500DD6637 /* Report.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Report.m; sourceTree = "<group>"; };
-		E979B842197043B600DD6637 /* ReportImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReportImage.h; sourceTree = "<group>"; };
-		E979B843197043B600DD6637 /* ReportImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReportImage.m; sourceTree = "<group>"; };
 		E979B8451970486500DD6637 /* STRReportTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STRReportTableViewController.h; sourceTree = "<group>"; };
 		E979B8461970486500DD6637 /* STRReportTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STRReportTableViewController.m; sourceTree = "<group>"; };
 		E97FF1161966EDFB004C6F09 /* Report.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Report.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -240,11 +240,11 @@
 		E97FF11F1966EDFB004C6F09 /* Report */ = {
 			isa = PBXGroup;
 			children = (
-				E91B1F0F1972EA8400917090 /* Utility */,
 				E9801C06196EE3950048C5E5 /* Entity */,
 				E9801BF6196ED3A50048C5E5 /* ViewController */,
 				E9801BF5196ED3990048C5E5 /* View */,
 				E997546D1968DDDA006B602C /* Client */,
+				E91B1F0F1972EA8400917090 /* Utility */,
 				E97FF12B1966EDFB004C6F09 /* Main.storyboard */,
 				E9801BFA196ED4A80048C5E5 /* Model.xcdatamodeld */,
 				E97FF1311966EDFB004C6F09 /* Images.xcassets */,
@@ -313,10 +313,10 @@
 		E9801C06196EE3950048C5E5 /* Entity */ = {
 			isa = PBXGroup;
 			children = (
-				E979B83F197043B500DD6637 /* Report.h */,
-				E979B840197043B500DD6637 /* Report.m */,
-				E979B842197043B600DD6637 /* ReportImage.h */,
-				E979B843197043B600DD6637 /* ReportImage.m */,
+				E93F796B197587FF004D813A /* Report.h */,
+				E93F796C197587FF004D813A /* Report.m */,
+				E93F796E19758800004D813A /* ReportImage.h */,
+				E93F796F19758800004D813A /* ReportImage.m */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -553,10 +553,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				E99754CD1968E118006B602C /* GTLQueryStatus.m in Sources */,
-				E979B844197043B600DD6637 /* ReportImage.m in Sources */,
 				E99754891968DF21006B602C /* GTLUploadParameters.m in Sources */,
 				E99754B01968DF5D006B602C /* GTMHTTPUploadFetcher.m in Sources */,
-				E979B841197043B500DD6637 /* Report.m in Sources */,
 				E997548C1968DF21006B602C /* GTLRuntimeCommon.m in Sources */,
 				E997549A1968DF3A006B602C /* GTLBase64.m in Sources */,
 				E9801BFF196EDACF0048C5E5 /* STRReportViewController.m in Sources */,
@@ -569,6 +567,7 @@
 				E99754861968DF21006B602C /* GTLBatchQuery.m in Sources */,
 				E99754B11968DF5D006B602C /* GTMGatherInputStream.m in Sources */,
 				E96ED36D1970F3EE005F6011 /* STRReportTableViewCell.m in Sources */,
+				E93F797019758800004D813A /* ReportImage.m in Sources */,
 				E997548A1968DF21006B602C /* GTLDateTime.m in Sources */,
 				E99754971968DF3A006B602C /* GTLFramework.m in Sources */,
 				E99754991968DF3A006B602C /* GTLUtilities.m in Sources */,
@@ -576,6 +575,7 @@
 				E99754981968DF3A006B602C /* GTLJSONParser.m in Sources */,
 				E99754881968DF21006B602C /* GTLBatchResult.m in Sources */,
 				E99754B31968DF5D006B602C /* GTMReadMonitorInputStream.m in Sources */,
+				E93F796D197587FF004D813A /* Report.m in Sources */,
 				E99754BF1968DF85006B602C /* GTMOAuth2ViewControllerTouch.m in Sources */,
 				E99754BA1968DF76006B602C /* GTMOAuth2SignIn.m in Sources */,
 				E99754AF1968DF5D006B602C /* GTMHTTPFetchHistory.m in Sources */,

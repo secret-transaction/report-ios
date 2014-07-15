@@ -8,14 +8,16 @@
 
 #import <Foundation/Foundation.h>
 
+//use this stuff as a guide
 @interface STRDataManager : NSObject
 
-@property (nonatomic, readonly, retain) NSManagedObjectModel *objectModel;
-@property (nonatomic, readonly, retain) NSManagedObjectContext *mainObjectContext;
-@property (nonatomic, readonly, retain) NSPersistentStoreCoordinator *persistentStoreCoordinator;
+@property (readonly, strong, nonatomic) NSManagedObjectContext *managedObjectContext;
+@property (readonly, strong, nonatomic) NSManagedObjectModel *managedObjectModel;
+@property (readonly, strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
 
 + (STRDataManager*)sharedInstance;
-- (BOOL)save;
-- (NSManagedObjectContext*)managedObjectContext;
+
+- (void)saveContext;
+- (NSURL *)applicationDocumentsDirectory;
 
 @end

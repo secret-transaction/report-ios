@@ -2,7 +2,7 @@
 //  ReportImage.h
 //  Report
 //
-//  Created by Lyndon Michael Bibera on 7/12/14.
+//  Created by Lyndon Michael Bibera on 7/16/14.
 //  Copyright (c) 2014 Secret Transaction Inc. All rights reserved.
 //
 
@@ -17,6 +17,7 @@
 @property (nonatomic, retain) NSString * remotUrl;
 @property (nonatomic, retain) NSNumber * uploaded;
 @property (nonatomic, retain) NSString * uploadUrl;
+@property (nonatomic, retain) NSString * remoteId;
 @property (nonatomic, retain) Report *report;
 
 @end

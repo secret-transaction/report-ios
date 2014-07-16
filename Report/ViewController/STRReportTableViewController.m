@@ -93,9 +93,10 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
+    NSString *segueId = segue.identifier;
+    NSLog(@"Segue:%@", segueId);
     
     if ([segue.identifier isEqualToString:SegueReport] && [segue.destinationViewController isKindOfClass:[STRReportViewController class]]) {
-        NSLog(@"EditReport");
         STRReportViewController *dvc = segue.destinationViewController;
         dvc.report = self.selectedReport;
     }
@@ -104,10 +105,12 @@
 - (IBAction)unwindToReportTableVC:(UIStoryboardSegue *)segue
 {
     NSString *segueId = segue.identifier;
-    NSLog(@"Segue:%@", segueId);
+    NSLog(@"Unwind Segue:%@", segueId);
     
     if ([segueId isEqualToString:UnwindSegueReportTable]) {
-        //TODO: do something
+        //TODO: find a better way to reload just a single cell
+        //instead of the entire table
+        [self.tableView reloadData];
     }
 }
 

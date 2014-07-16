@@ -12,5 +12,6 @@
 @interface STRReportViewController : UIViewController
 
 @property (strong, nonatomic) Report *report;
+@property (strong, nonatomic) NSManagedObjectContext *context;
 
 @end

@@ -9,11 +9,17 @@
 #import "STRAppDelegate.h"
 #import "STRReportViewController.h"
 #import "Report.h"
+#import "Report+Description.h"
 #import "STRDataManager.h"
 #import "STREditArticleViewController.h"
 
 @interface STRReportViewController ()
+
 @property (weak, nonatomic) IBOutlet UITextView *detailText;
+@property (weak, nonatomic) IBOutlet UIImageView *reportPrimaryImage;
+
+@property (weak, nonatomic) IBOutlet UITextView *reportDetails;
+- (IBAction)save:(UIBarButtonItem *)sender;
 
 @end
 
@@ -22,9 +28,17 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    if (self.report) {
-        self.title = self.report.title;
-        self.detailText.text = self.report.detail;
+    self.context = [STRDataManager sharedInstance].managedObjectContext;
+    [self configureView];
+}
+
+- (void)configureView
+{
+    Report *rep = self.report;
+    if (rep) {
+        self.title = rep.title;
+        self.detailText.text = rep.detail;
+        //TODO: configure image
     }
 }
 
@@ -40,18 +54,30 @@
 
 - (IBAction)save:(UIBarButtonItem *)sender
 {
-    NSManagedObjectContext *context = [[STRDataManager sharedInstance] managedObjectContext];
-    
-    Report *report = self.report;
-    report.detail = self.detailText.text;
-    
     NSError *error = nil;
-    [context save:&error];
+    [self.context save:&error];
     
     if (error) {
         NSLog(@"Ooops...something went wrong");
-    } else {
-        self.detailText.text = @"";
+        UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@"Error" message:@"Save Failed, Try Again?" delegate:self cancelButtonTitle:@"No" otherButtonTitles:@"Yes", nil];
+        [alertView show];
+    }
+}
+
+#pragma mark - Alert View Delegate
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:
+    (NSInteger)buttonIndex{
+    switch (buttonIndex) {
+        case 0:
+            NSLog(@"Cancel button clicked");
+            break;
+        case 1:
+            NSLog(@"OK button clicked");
+            break;
+            
+        default:
+            break;
     }
 }
 
@@ -64,6 +90,15 @@
         NSLog(@"ReportToArticleSegue");
         STREditArticleViewController *dvc = segue.destinationViewController;
         dvc.report = self.report;
+    }
+}
+
+- (IBAction)unwindFromModalViewController:(UIStoryboardSegue *)segue
+{
+    if ([segue.sourceViewController isKindOfClass:[STREditArticleViewController class]]) {
+        STREditArticleViewController *svc = segue.sourceViewController;
+        NSLog(@"%@", [svc.report display]);
+        [self configureView];
     }
 }
 

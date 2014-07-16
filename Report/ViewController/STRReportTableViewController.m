@@ -14,6 +14,8 @@
 
 @interface STRReportTableViewController ()
 
+- (IBAction)addReport:(UIBarButtonItem *)sender;
+
 @end
 
 @implementation STRReportTableViewController
@@ -22,16 +24,6 @@
 {
     [super viewDidLoad];
     self.context =  [[STRDataManager sharedInstance] managedObjectContext];
-}
-
-- (IBAction)addReport:(UIBarButtonItem *)sender
-{
-    Report *newReport = [NSEntityDescription insertNewObjectForEntityForName:@"Report" inManagedObjectContext:self.context];
-    newReport.title = @"My Article";
-    newReport.detail = @"Some Details...";
-    
-    self.selectedReport = newReport;
-    [self performSegueWithIdentifier:@"EditReportSegue" sender:self];
 }
 
 #pragma mark - Table view data source
@@ -83,6 +75,16 @@
 }
 
 #pragma mark - Navigation
+
+- (IBAction)addReport:(UIBarButtonItem *)sender
+{
+    Report *newReport = [NSEntityDescription insertNewObjectForEntityForName:@"Report" inManagedObjectContext:self.context];
+    newReport.title = @"My Article";
+    newReport.detail = @"Some Details...";
+    
+    self.selectedReport = newReport;
+    [self performSegueWithIdentifier:@"EditReportSegue" sender:self];
+}
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {

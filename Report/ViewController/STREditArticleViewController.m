@@ -17,29 +17,27 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self configureView];
+}
+
+- (void)configureView
+{
     if (self.report) {
         self.editTitle.text = self.report.title;
         self.editDetails.text = self.report.detail;
     }
 }
 
-- (IBAction)done:(UIBarButtonItem *)sender
-{
-    NSLog(@"Done");
-    self.report.title = self.editTitle.text;
-    self.report.detail = self.editDetails.text;
-    [self.navigationController popViewControllerAnimated:YES];
-}
-
-/*
 #pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    NSLog(@"prepareForSegue:%@", segue.identifier);
+    if ([segue.identifier isEqualToString:@"done"] ) {
+        Report *r = self.report;
+        r.title = self.editTitle.text;
+        r.detail = self.editDetails.text;
+    }
 }
-*/
 
 @end

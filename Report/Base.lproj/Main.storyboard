@@ -108,6 +108,8 @@
                     </navigationItem>
                     <connections>
                         <outlet property="detailText" destination="oTM-Cy-gtj" id="qfl-ik-5eQ"/>
+                        <outlet property="reportDetails" destination="oTM-Cy-gtj" id="bMN-Ov-LMB"/>
+                        <outlet property="reportPrimaryImage" destination="RKn-xh-2sG" id="VN4-b0-Rxi"/>
                         <segue destination="egQ-Ph-kfv" kind="push" identifier="ReportToImagesSegue" id="dRm-iw-uSJ"/>
                         <segue destination="1pe-2u-SAR" kind="push" identifier="ReportToArticleSegue" id="S21-zv-wlS"/>
                     </connections>
@@ -163,7 +165,7 @@
                     <navigationItem key="navigationItem" title="Article" id="ewP-7c-BBP">
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="XXF-Df-O0F">
                             <connections>
-                                <action selector="done:" destination="1pe-2u-SAR" id="mbX-SW-b55"/>
+                                <segue destination="bWj-5v-FAy" kind="unwind" identifier="done" unwindAction="unwindFromModalViewController:" id="MtK-l9-JX5"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -173,6 +175,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q5H-w1-MvB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="bWj-5v-FAy" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="655" y="-375"/>
         </scene>

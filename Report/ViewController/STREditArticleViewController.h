@@ -10,6 +10,7 @@
 #import "Report.h"
 
 @interface STREditArticleViewController : UIViewController
+
 @property (weak, nonatomic) IBOutlet UITextField *editTitle;
 @property (weak, nonatomic) IBOutlet UITextView *editDetails;
 @property (strong, nonatomic) Report *report;

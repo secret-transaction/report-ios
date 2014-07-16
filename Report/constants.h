@@ -13,12 +13,12 @@
 static NSString *const EntityReport = @"Report";
 
 //segues Segue<VCName without "ViewController">
-static NSString *const SegueReport = @"EditReportSegue";
-static NSString *const SegueEditArticle = @"ReportToArticleSegue";
-static NSString *const SegueEditImages = @"ReportToImagesSegue";
+static NSString *const SegueReport = @"SegueReport";
+static NSString *const SegueEditArticle = @"SegueEditArticle";
+static NSString *const SegueEditImages = @"SegueEditImages";
 
 //unwind segues UnwindSegue<VCName without "ViewController">
-static NSString *const UnwindSegueReportTable = @"unwindToReportTableVC";
-static NSString *const UnwindSegueReport = @"done";
+static NSString *const UnwindSegueReportTable = @"UnwindSegueReportTable";
+static NSString *const UnwindSegueReport = @"UnwindSegueReport";
 
 #endif

@@ -102,7 +102,7 @@
                     <navigationItem key="navigationItem" title="Report" id="0QS-y9-GeK">
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="411-gt-3yc">
                             <connections>
-                                <segue destination="iRv-JM-1b6" kind="unwind" identifier="unwindToReportTableVC" unwindAction="unwindToReportTableVC:" id="Vy0-t8-Zf7"/>
+                                <segue destination="iRv-JM-1b6" kind="unwind" identifier="UnwindSegueReportTable" unwindAction="unwindToReportTableVC:" id="Ege-rH-DKu"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -110,8 +110,8 @@
                         <outlet property="detailText" destination="oTM-Cy-gtj" id="qfl-ik-5eQ"/>
                         <outlet property="reportDetails" destination="oTM-Cy-gtj" id="bMN-Ov-LMB"/>
                         <outlet property="reportPrimaryImage" destination="RKn-xh-2sG" id="VN4-b0-Rxi"/>
-                        <segue destination="egQ-Ph-kfv" kind="push" identifier="ReportToImagesSegue" id="dRm-iw-uSJ"/>
-                        <segue destination="1pe-2u-SAR" kind="push" identifier="ReportToArticleSegue" id="S21-zv-wlS"/>
+                        <segue destination="egQ-Ph-kfv" kind="push" identifier="SegueEditImages" id="dRm-iw-uSJ"/>
+                        <segue destination="1pe-2u-SAR" kind="push" identifier="SegueEditArticle" id="S21-zv-wlS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MRk-gj-dEK" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -166,7 +166,7 @@
                     <navigationItem key="navigationItem" title="Article" id="ewP-7c-BBP">
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="XXF-Df-O0F">
                             <connections>
-                                <segue destination="bWj-5v-FAy" kind="unwind" identifier="done" unwindAction="unwindFromModalViewController:" id="MtK-l9-JX5"/>
+                                <segue destination="bWj-5v-FAy" kind="unwind" identifier="UnwindSegueReport" unwindAction="unwindToReportVC:" id="ymm-nd-goJ"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -284,7 +284,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <segue destination="Oa3-PK-8vX" kind="push" identifier="EditReportSegue" id="qoP-1I-NyM"/>
+                        <segue destination="Oa3-PK-8vX" kind="push" identifier="SegueReport" id="qoP-1I-NyM"/>
                         <segue destination="vXZ-lx-hvc" kind="modal" identifier="SurpriseSegue" id="TNw-2n-2Ev"/>
                     </connections>
                 </tableViewController>

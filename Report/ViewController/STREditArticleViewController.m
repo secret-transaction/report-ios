@@ -32,8 +32,9 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    NSLog(@"prepareForSegue:%@", segue.identifier);
-    if ([segue.identifier isEqualToString:UnwindSegueReport] ) {
+    NSString *segueId = segue.identifier;
+    NSLog(@"Segue:%@", segueId);
+    if ([segueId isEqualToString:UnwindSegueReport] ) {
         Report *r = self.report;
         r.title = self.editTitle.text;
         r.detail = self.editDetails.text;

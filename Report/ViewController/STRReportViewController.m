@@ -91,11 +91,11 @@
     }
 }
 
-- (IBAction)unwindFromModalViewController:(UIStoryboardSegue *)segue
+- (IBAction)unwindToReportVC:(UIStoryboardSegue *)segue
 {
+    NSString *segueId = segue.identifier;
+    NSLog(@"Unwind Segue:%@", segueId);
     if ([segue.sourceViewController isKindOfClass:[STREditArticleViewController class]]) {
-        STREditArticleViewController *svc = segue.sourceViewController;
-        NSLog(@"%@", [svc.report display]);
         [self configureView];
     }
 }

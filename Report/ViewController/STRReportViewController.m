@@ -12,14 +12,13 @@
 #import "Report+Description.h"
 #import "STRDataManager.h"
 #import "STREditArticleViewController.h"
+#import "constants.h"
 
 @interface STRReportViewController ()
 
 @property (weak, nonatomic) IBOutlet UITextView *detailText;
 @property (weak, nonatomic) IBOutlet UIImageView *reportPrimaryImage;
-
 @property (weak, nonatomic) IBOutlet UITextView *reportDetails;
-- (IBAction)save:(UIBarButtonItem *)sender;
 
 @end
 
@@ -52,7 +51,7 @@
     [self performSegueWithIdentifier:@"ReportToImagesSegue" sender:self];
 }
 
-- (IBAction)save:(UIBarButtonItem *)sender
+- (void)save
 {
     NSError *error = nil;
     [self.context save:&error];
@@ -85,11 +84,15 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
+    NSString *segueId = segue.identifier;
+    NSLog(@"Segue:%@", segueId);
     
-    if ([segue.identifier isEqualToString:@"ReportToArticleSegue"] && [segue.destinationViewController isKindOfClass:[STREditArticleViewController class]]) {
-        NSLog(@"ReportToArticleSegue");
+    if ([segueId isEqualToString:@"ReportToArticleSegue"] && [segue.destinationViewController isKindOfClass:[STREditArticleViewController class]]) {
+        
         STREditArticleViewController *dvc = segue.destinationViewController;
         dvc.report = self.report;
+    } else if ([segueId isEqualToString:UnwindSegueToReportTableVC]) {
+        [self save];
     }
 }
 

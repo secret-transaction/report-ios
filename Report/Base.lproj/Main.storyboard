@@ -102,7 +102,7 @@
                     <navigationItem key="navigationItem" title="Report" id="0QS-y9-GeK">
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="411-gt-3yc">
                             <connections>
-                                <action selector="save:" destination="Oa3-PK-8vX" id="ytR-sU-tHg"/>
+                                <segue destination="iRv-JM-1b6" kind="unwind" identifier="unwindToReportTableVC" unwindAction="unwindToReportTableVC:" id="Vy0-t8-Zf7"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -115,6 +115,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MRk-gj-dEK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="iRv-JM-1b6" userLabel="Exit" sceneMemberID="exit"/>
                 <tapGestureRecognizer id="fXF-9E-jPO">
                     <connections>
                         <action selector="tapToEditArticle:" destination="Oa3-PK-8vX" id="58I-EK-PB4"/>

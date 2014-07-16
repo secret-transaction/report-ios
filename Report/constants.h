@@ -9,8 +9,13 @@
 #ifndef Report_constants_h
 #define Report_constants_h
 
+//entity names
 static NSString *const EntityReport = @"Report";
 
+//segues
 static NSString *const SegueEditReport = @"EditReportSegue";
+
+//unwind segues
+static NSString *const UnwindSegueToReportTableVC = @"unwindToReportTableVC";
 
 #endif

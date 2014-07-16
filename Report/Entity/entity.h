@@ -13,4 +13,8 @@
 #import "Report+Description.h"
 #import "ReportImage.h"
 
+//entity names
+static NSString *const EntityReport = @"Report";
+static NSString *const EntityReportImage = @"ReportImage";
+
 #endif

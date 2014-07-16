@@ -17,6 +17,14 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self configureView];
+}
+
+- (void)configureView
+{
+    if (self.report) {
+        //TODO: set images from Report
+    }
 }
 
 #pragma mark - Navigation

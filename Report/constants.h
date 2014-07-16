@@ -9,9 +9,6 @@
 #ifndef Report_constants_h
 #define Report_constants_h
 
-//entity names
-static NSString *const EntityReport = @"Report";
-
 //segues Segue<VCName without "ViewController">
 static NSString *const SegueReport = @"SegueReport";
 static NSString *const SegueEditArticle = @"SegueEditArticle";

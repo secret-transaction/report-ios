@@ -8,6 +8,7 @@
 
 #import "STRReportViewController.h"
 #import "STREditArticleViewController.h"
+#import "STREditImagesViewController.h"
 
 @interface STRReportViewController ()
 
@@ -83,8 +84,10 @@
     NSLog(@"Segue:%@", segueId);
     
     if ([segueId isEqualToString:SegueEditArticle] && [segue.destinationViewController isKindOfClass:[STREditArticleViewController class]]) {
-        
         STREditArticleViewController *dvc = segue.destinationViewController;
+        dvc.report = self.report;
+    } else if ([segueId isEqualToString:SegueEditImages]) {
+        STREditImagesViewController *dvc = segue.destinationViewController;
         dvc.report = self.report;
     } else if ([segueId isEqualToString:UnwindSegueReportTable]) {
         [self save];

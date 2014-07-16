@@ -8,4 +8,5 @@
 
 @interface STREditImagesViewController : UIViewController
 
+@property (strong, nonatomic) Report *report;
 @end

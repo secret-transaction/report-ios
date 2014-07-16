@@ -26,9 +26,11 @@
 
 - (IBAction)addReport:(UIBarButtonItem *)sender
 {
-    self.selectedReport = [NSEntityDescription insertNewObjectForEntityForName:@"Report" inManagedObjectContext:self.context];
-    self.selectedReport.title = @"My Article";
-    self.selectedReport.detail = @"Some Details...";
+    Report *newReport = [NSEntityDescription insertNewObjectForEntityForName:@"Report" inManagedObjectContext:self.context];
+    newReport.title = @"My Article";
+    newReport.detail = @"Some Details...";
+    
+    self.selectedReport = newReport;
     [self performSegueWithIdentifier:@"EditReportSegue" sender:self];
 }
 
@@ -81,6 +83,14 @@
 }
 
 #pragma mark - Navigation
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    Report *report = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    
+    self.selectedReport = report;
+    [self performSegueWithIdentifier:@"EditReportSegue" sender:self];
+}
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {

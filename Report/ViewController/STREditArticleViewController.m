@@ -7,6 +7,7 @@
 //
 
 #import "STREditArticleViewController.h"
+#import "constants.h"
 
 @interface STREditArticleViewController ()
 
@@ -33,7 +34,7 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     NSLog(@"prepareForSegue:%@", segue.identifier);
-    if ([segue.identifier isEqualToString:@"done"] ) {
+    if ([segue.identifier isEqualToString:UnwindSegueReport] ) {
         Report *r = self.report;
         r.title = self.editTitle.text;
         r.detail = self.editDetails.text;

@@ -91,7 +91,7 @@
         
         STREditArticleViewController *dvc = segue.destinationViewController;
         dvc.report = self.report;
-    } else if ([segueId isEqualToString:UnwindSegueToReportTableVC]) {
+    } else if ([segueId isEqualToString:UnwindSegueReportTable]) {
         [self save];
     }
 }

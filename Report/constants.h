@@ -12,10 +12,13 @@
 //entity names
 static NSString *const EntityReport = @"Report";
 
-//segues
-static NSString *const SegueEditReport = @"EditReportSegue";
+//segues Segue<VCName>
+static NSString *const SegueReport = @"EditReportSegue";
+static NSString *const SegueEditArticle = @"ReportToArticleSegue";
+static NSString *const SegueEditImages = @"ReportToImagesSegue";
 
-//unwind segues
-static NSString *const UnwindSegueToReportTableVC = @"unwindToReportTableVC";
+//unwind segues UnwindSegue<VCName>
+static NSString *const UnwindSegueReportTable = @"unwindToReportTableVC";
+static NSString *const UnwindSegueReport = @"done";
 
 #endif

@@ -83,7 +83,7 @@
     newReport.detail = @"Some Details...";
     
     self.selectedReport = newReport;
-    [self performSegueWithIdentifier:SegueEditReport sender:self];
+    [self performSegueWithIdentifier:SegueReport sender:self];
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
@@ -91,13 +91,13 @@
     Report *report = [self.fetchedResultsController objectAtIndexPath:indexPath];
     
     self.selectedReport = report;
-    [self performSegueWithIdentifier:SegueEditReport sender:self];
+    [self performSegueWithIdentifier:SegueReport sender:self];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     
-    if ([segue.identifier isEqualToString:SegueEditReport] && [segue.destinationViewController isKindOfClass:[STRReportViewController class]]) {
+    if ([segue.identifier isEqualToString:SegueReport] && [segue.destinationViewController isKindOfClass:[STRReportViewController class]]) {
         NSLog(@"EditReport");
         STRReportViewController *dvc = segue.destinationViewController;
         dvc.report = self.selectedReport;
@@ -109,7 +109,7 @@
     NSString *segueId = segue.identifier;
     NSLog(@"Segue:%@", segueId);
     
-    if ([segueId isEqualToString:UnwindSegueToReportTableVC]) {
+    if ([segueId isEqualToString:UnwindSegueReportTable]) {
         //TODO: do something
     }
 }

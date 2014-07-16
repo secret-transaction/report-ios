@@ -80,6 +80,7 @@
 		E93F796C197587FF004D813A /* Report.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Report.m; sourceTree = "<group>"; };
 		E93F796E19758800004D813A /* ReportImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReportImage.h; sourceTree = "<group>"; };
 		E93F796F19758800004D813A /* ReportImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReportImage.m; sourceTree = "<group>"; };
+		E95707521976872200C41CF5 /* entity.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = entity.h; sourceTree = "<group>"; };
 		E96ED36B1970F3EE005F6011 /* STRReportTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STRReportTableViewCell.h; sourceTree = "<group>"; };
 		E96ED36C1970F3EE005F6011 /* STRReportTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STRReportTableViewCell.m; sourceTree = "<group>"; };
 		E979B8451970486500DD6637 /* STRReportTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STRReportTableViewController.h; sourceTree = "<group>"; };
@@ -324,6 +325,7 @@
 				E93F796C197587FF004D813A /* Report.m */,
 				E93F796E19758800004D813A /* ReportImage.h */,
 				E93F796F19758800004D813A /* ReportImage.m */,
+				E95707521976872200C41CF5 /* entity.h */,
 			);
 			path = Entity;
 			sourceTree = "<group>";

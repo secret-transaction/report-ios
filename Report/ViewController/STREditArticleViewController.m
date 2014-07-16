@@ -7,7 +7,6 @@
 //
 
 #import "STREditArticleViewController.h"
-#import "constants.h"
 
 @interface STREditArticleViewController ()
 

@@ -6,12 +6,9 @@
 //  Copyright (c) 2014 Secret Transaction Inc. All rights reserved.
 //
 
-#import "Report.h"
 #import "STRReportTableViewCell.h"
 #import "STRReportTableViewController.h"
 #import "STRReportViewController.h"
-#import "STRDataManager.h"
-#import "constants.h"
 
 @interface STRReportTableViewController ()
 

@@ -6,9 +6,6 @@
 //  Copyright (c) 2014 Secret Transaction Inc. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-#import "Report.h"
-
 @interface STRReportTableViewController : UITableViewController
 
 @property (strong, nonatomic) NSManagedObjectContext *context;

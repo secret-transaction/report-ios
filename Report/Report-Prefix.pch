@@ -14,5 +14,8 @@
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
     #import <CoreData/CoreData.h>
+    #import "STRAppDelegate.h"
     #import "STRDataManager.h"
+    #import "constants.h"
+    #import "entity.h"
 #endif

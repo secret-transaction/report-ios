@@ -6,13 +6,8 @@
 //  Copyright (c) 2014 Secret Transaction Inc. All rights reserved.
 //
 
-#import "STRAppDelegate.h"
 #import "STRReportViewController.h"
-#import "Report.h"
-#import "Report+Description.h"
-#import "STRDataManager.h"
 #import "STREditArticleViewController.h"
-#import "constants.h"
 
 @interface STRReportViewController ()
 
@@ -43,12 +38,12 @@
 
 - (IBAction)tapToEditArticle:(id)sender
 {
-    [self performSegueWithIdentifier:@"ReportToArticleSegue" sender:self];
+    [self performSegueWithIdentifier:SegueEditArticle sender:self];
 }
 
 - (IBAction)tapToEditImages:(id)sender
 {
-    [self performSegueWithIdentifier:@"ReportToImagesSegue" sender:self];
+    [self performSegueWithIdentifier:SegueEditImages sender:self];
 }
 
 - (void)save
@@ -87,7 +82,7 @@
     NSString *segueId = segue.identifier;
     NSLog(@"Segue:%@", segueId);
     
-    if ([segueId isEqualToString:@"ReportToArticleSegue"] && [segue.destinationViewController isKindOfClass:[STREditArticleViewController class]]) {
+    if ([segueId isEqualToString:SegueEditArticle] && [segue.destinationViewController isKindOfClass:[STREditArticleViewController class]]) {
         
         STREditArticleViewController *dvc = segue.destinationViewController;
         dvc.report = self.report;

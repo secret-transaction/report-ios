@@ -11,6 +11,7 @@
 #import "STRReportTableViewController.h"
 #import "STRReportViewController.h"
 #import "STRDataManager.h"
+#import "constants.h"
 
 @interface STRReportTableViewController ()
 
@@ -56,9 +57,8 @@
         return _fetchedResultsController;
     }
     
-    
     NSFetchRequest *request = [NSFetchRequest new];
-    [request setEntity:[NSEntityDescription entityForName:@"Report" inManagedObjectContext:self.context]];
+    [request setEntity:[NSEntityDescription entityForName:EntityReport inManagedObjectContext:self.context]];
     NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"dateCreated" ascending:NO];
     request.sortDescriptors = @[sortDescriptor];
     
@@ -78,12 +78,12 @@
 
 - (IBAction)addReport:(UIBarButtonItem *)sender
 {
-    Report *newReport = [NSEntityDescription insertNewObjectForEntityForName:@"Report" inManagedObjectContext:self.context];
+    Report *newReport = [NSEntityDescription insertNewObjectForEntityForName:EntityReport inManagedObjectContext:self.context];
     newReport.title = @"My Article";
     newReport.detail = @"Some Details...";
     
     self.selectedReport = newReport;
-    [self performSegueWithIdentifier:@"EditReportSegue" sender:self];
+    [self performSegueWithIdentifier:SegueEditReport sender:self];
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
@@ -91,13 +91,13 @@
     Report *report = [self.fetchedResultsController objectAtIndexPath:indexPath];
     
     self.selectedReport = report;
-    [self performSegueWithIdentifier:@"EditReportSegue" sender:self];
+    [self performSegueWithIdentifier:SegueEditReport sender:self];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     
-    if ([segue.identifier isEqualToString:@"EditReportSegue"] && [segue.destinationViewController isKindOfClass:[STRReportViewController class]]) {
+    if ([segue.identifier isEqualToString:SegueEditReport] && [segue.destinationViewController isKindOfClass:[STRReportViewController class]]) {
         NSLog(@"EditReport");
         STRReportViewController *dvc = segue.destinationViewController;
         dvc.report = self.selectedReport;

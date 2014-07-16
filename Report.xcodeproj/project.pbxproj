@@ -113,6 +113,7 @@
 		E9801C2B196EEAC00048C5E5 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		E98DC06219762F4000BB47B6 /* Report+Description.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Report+Description.h"; sourceTree = "<group>"; };
 		E98DC06319762F4000BB47B6 /* Report+Description.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Report+Description.m"; sourceTree = "<group>"; };
+		E98DC0651976769F00BB47B6 /* constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = constants.h; sourceTree = "<group>"; };
 		E99754701968DEDE006B602C /* GTLDefines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTLDefines.h; sourceTree = "<group>"; };
 		E99754721968DF21006B602C /* GTLObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTLObject.h; sourceTree = "<group>"; };
 		E99754731968DF21006B602C /* GTLObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTLObject.m; sourceTree = "<group>"; };
@@ -248,6 +249,7 @@
 				E9801BF5196ED3990048C5E5 /* View */,
 				E997546D1968DDDA006B602C /* Client */,
 				E91B1F0F1972EA8400917090 /* Utility */,
+				E98DC0651976769F00BB47B6 /* constants.h */,
 				E97FF12B1966EDFB004C6F09 /* Main.storyboard */,
 				E9801BFA196ED4A80048C5E5 /* Model.xcdatamodeld */,
 				E97FF1311966EDFB004C6F09 /* Images.xcassets */,

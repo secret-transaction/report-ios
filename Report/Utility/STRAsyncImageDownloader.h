@@ -22,6 +22,8 @@
 @property NSString *mediaURL;
 @property NSString *fileURL;
 
++(void)loadFromURL:(NSString *)imageUrl toImageView:(UIImageView *)imageView;
+
 -(id)initWithMediaURL:(NSString *)theMediaURL successBlock:(void (^)(UIImage *image))success failBlock:(void(^)(NSError *error))fail;
 
 -(id)initWithFileURL:(NSString *)theFileURL successBlock:(void (^)(NSData *data))success failBlock:(void(^)(NSError *error))fail;

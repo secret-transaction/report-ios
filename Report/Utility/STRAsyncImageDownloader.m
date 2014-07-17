@@ -13,6 +13,20 @@
 
 @synthesize mediaURL, fileURL;
 
++(void)loadFromURL:(NSString *)imageUrl toImageView:(UIImageView *)imageView
+{
+    STRAsyncImageDownloader *asyncImageDLM = [[STRAsyncImageDownloader alloc] initWithMediaURL:imageUrl successBlock:^(UIImage *image) {
+        NSLog(@"Image Download Succeeded");
+        imageView.image = image;
+    } failBlock:^(NSError *error) {
+        //TODO: hanle failure
+        NSLog(@"Image Download Failed");
+    }];
+    
+    [asyncImageDLM startDownload];
+
+}
+
 -(id)initWithMediaURL:(NSString *)theMediaURL successBlock:(void (^)(UIImage *image))success failBlock:(void(^)(NSError *error))fail
 {
     self = [super init];

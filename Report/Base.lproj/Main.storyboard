@@ -236,6 +236,17 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Images" id="pHS-cv-G2f"/>
+                    <connections>
+                        <outletCollection property="imageThumnails" destination="B3B-im-Fq5" id="AI0-qS-XtH"/>
+                        <outletCollection property="imageThumnails" destination="gqq-c1-HCo" id="cT7-gz-lIi"/>
+                        <outletCollection property="imageThumnails" destination="lzR-Kc-rMl" id="a6x-kp-hFl"/>
+                        <outletCollection property="imageThumnails" destination="3en-56-Id7" id="K63-F4-IZe"/>
+                        <outletCollection property="imageThumnails" destination="ID4-vC-Y41" id="4hG-nl-Mrm"/>
+                        <outletCollection property="imageThumnails" destination="voQ-8p-Igz" id="a2I-eP-5zP"/>
+                        <outletCollection property="imageThumnails" destination="dpc-ZV-Sym" id="RBO-AR-dHw"/>
+                        <outletCollection property="imageThumnails" destination="yxA-Pr-FXf" id="62U-pJ-WNc"/>
+                        <outletCollection property="imageThumnails" destination="zTe-DT-VQ8" id="8N5-3E-0HI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8gR-4v-B10" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

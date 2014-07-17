@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		E91B1F121972EAB600917090 /* STRDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E91B1F111972EAB600917090 /* STRDataManager.m */; };
+		E92783841978246300A57E93 /* STRAsyncImageDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = E92783831978246300A57E93 /* STRAsyncImageDownloader.m */; };
 		E93F796D197587FF004D813A /* Report.m in Sources */ = {isa = PBXBuildFile; fileRef = E93F796C197587FF004D813A /* Report.m */; };
 		E93F797019758800004D813A /* ReportImage.m in Sources */ = {isa = PBXBuildFile; fileRef = E93F796F19758800004D813A /* ReportImage.m */; };
 		E96ED36D1970F3EE005F6011 /* STRReportTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E96ED36C1970F3EE005F6011 /* STRReportTableViewCell.m */; };
@@ -76,6 +77,8 @@
 /* Begin PBXFileReference section */
 		E91B1F101972EAB600917090 /* STRDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STRDataManager.h; sourceTree = "<group>"; };
 		E91B1F111972EAB600917090 /* STRDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STRDataManager.m; sourceTree = "<group>"; };
+		E92783821978246300A57E93 /* STRAsyncImageDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STRAsyncImageDownloader.h; sourceTree = "<group>"; };
+		E92783831978246300A57E93 /* STRAsyncImageDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STRAsyncImageDownloader.m; sourceTree = "<group>"; };
 		E93F796B197587FF004D813A /* Report.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Report.h; sourceTree = "<group>"; };
 		E93F796C197587FF004D813A /* Report.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Report.m; sourceTree = "<group>"; };
 		E93F796E19758800004D813A /* ReportImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReportImage.h; sourceTree = "<group>"; };
@@ -207,6 +210,8 @@
 			children = (
 				E91B1F101972EAB600917090 /* STRDataManager.h */,
 				E91B1F111972EAB600917090 /* STRDataManager.m */,
+				E92783821978246300A57E93 /* STRAsyncImageDownloader.h */,
+				E92783831978246300A57E93 /* STRAsyncImageDownloader.m */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -576,6 +581,7 @@
 				E99754861968DF21006B602C /* GTLBatchQuery.m in Sources */,
 				E99754B11968DF5D006B602C /* GTMGatherInputStream.m in Sources */,
 				E96ED36D1970F3EE005F6011 /* STRReportTableViewCell.m in Sources */,
+				E92783841978246300A57E93 /* STRAsyncImageDownloader.m in Sources */,
 				E93F797019758800004D813A /* ReportImage.m in Sources */,
 				E997548A1968DF21006B602C /* GTLDateTime.m in Sources */,
 				E99754971968DF3A006B602C /* GTLFramework.m in Sources */,

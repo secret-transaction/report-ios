@@ -79,6 +79,12 @@
     newReport.title = @"My Article";
     newReport.detail = @"Some Details...";
     
+    
+    for (int i=0; i<9; i++) {
+        ReportImage *img =  [NSEntityDescription insertNewObjectForEntityForName:EntityReportImage inManagedObjectContext:self.context];
+        img.report = newReport;
+    }
+    
     self.selectedReport = newReport;
     [self performSegueWithIdentifier:SegueReport sender:self];
 }

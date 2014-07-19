@@ -9,8 +9,8 @@
 /* Begin PBXBuildFile section */
 		E91B1F121972EAB600917090 /* STRDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E91B1F111972EAB600917090 /* STRDataManager.m */; };
 		E92783841978246300A57E93 /* STRAsyncImageDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = E92783831978246300A57E93 /* STRAsyncImageDownloader.m */; };
-		E93F796D197587FF004D813A /* Report.m in Sources */ = {isa = PBXBuildFile; fileRef = E93F796C197587FF004D813A /* Report.m */; };
 		E93F797019758800004D813A /* ReportImage.m in Sources */ = {isa = PBXBuildFile; fileRef = E93F796F19758800004D813A /* ReportImage.m */; };
+		E94F6912197ABF35000D1489 /* Report.m in Sources */ = {isa = PBXBuildFile; fileRef = E94F6911197ABF35000D1489 /* Report.m */; };
 		E96ED36D1970F3EE005F6011 /* STRReportTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E96ED36C1970F3EE005F6011 /* STRReportTableViewCell.m */; };
 		E979B8471970486500DD6637 /* STRReportTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E979B8461970486500DD6637 /* STRReportTableViewController.m */; };
 		E97FF11A1966EDFB004C6F09 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E97FF1191966EDFB004C6F09 /* Foundation.framework */; };
@@ -79,10 +79,10 @@
 		E91B1F111972EAB600917090 /* STRDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STRDataManager.m; sourceTree = "<group>"; };
 		E92783821978246300A57E93 /* STRAsyncImageDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STRAsyncImageDownloader.h; sourceTree = "<group>"; };
 		E92783831978246300A57E93 /* STRAsyncImageDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STRAsyncImageDownloader.m; sourceTree = "<group>"; };
-		E93F796B197587FF004D813A /* Report.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Report.h; sourceTree = "<group>"; };
-		E93F796C197587FF004D813A /* Report.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Report.m; sourceTree = "<group>"; };
 		E93F796E19758800004D813A /* ReportImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReportImage.h; sourceTree = "<group>"; };
 		E93F796F19758800004D813A /* ReportImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReportImage.m; sourceTree = "<group>"; };
+		E94F6910197ABF35000D1489 /* Report.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Report.h; sourceTree = "<group>"; };
+		E94F6911197ABF35000D1489 /* Report.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Report.m; sourceTree = "<group>"; };
 		E95707521976872200C41CF5 /* entity.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = entity.h; sourceTree = "<group>"; };
 		E96ED36B1970F3EE005F6011 /* STRReportTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STRReportTableViewCell.h; sourceTree = "<group>"; };
 		E96ED36C1970F3EE005F6011 /* STRReportTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STRReportTableViewCell.m; sourceTree = "<group>"; };
@@ -324,13 +324,13 @@
 		E9801C06196EE3950048C5E5 /* Entity */ = {
 			isa = PBXGroup;
 			children = (
-				E93F796B197587FF004D813A /* Report.h */,
 				E98DC06219762F4000BB47B6 /* Report+Description.h */,
 				E98DC06319762F4000BB47B6 /* Report+Description.m */,
-				E93F796C197587FF004D813A /* Report.m */,
 				E93F796E19758800004D813A /* ReportImage.h */,
 				E93F796F19758800004D813A /* ReportImage.m */,
 				E95707521976872200C41CF5 /* entity.h */,
+				E94F6910197ABF35000D1489 /* Report.h */,
+				E94F6911197ABF35000D1489 /* Report.m */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -581,6 +581,7 @@
 				E99754861968DF21006B602C /* GTLBatchQuery.m in Sources */,
 				E99754B11968DF5D006B602C /* GTMGatherInputStream.m in Sources */,
 				E96ED36D1970F3EE005F6011 /* STRReportTableViewCell.m in Sources */,
+				E94F6912197ABF35000D1489 /* Report.m in Sources */,
 				E92783841978246300A57E93 /* STRAsyncImageDownloader.m in Sources */,
 				E93F797019758800004D813A /* ReportImage.m in Sources */,
 				E997548A1968DF21006B602C /* GTLDateTime.m in Sources */,
@@ -590,7 +591,6 @@
 				E99754981968DF3A006B602C /* GTLJSONParser.m in Sources */,
 				E99754881968DF21006B602C /* GTLBatchResult.m in Sources */,
 				E99754B31968DF5D006B602C /* GTMReadMonitorInputStream.m in Sources */,
-				E93F796D197587FF004D813A /* Report.m in Sources */,
 				E99754BF1968DF85006B602C /* GTMOAuth2ViewControllerTouch.m in Sources */,
 				E99754BA1968DF76006B602C /* GTMOAuth2SignIn.m in Sources */,
 				E99754AF1968DF5D006B602C /* GTMHTTPFetchHistory.m in Sources */,
@@ -732,6 +732,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Report/Report-Prefix.pch";
 				INFOPLIST_FILE = "Report/Report-Info.plist";
@@ -746,6 +747,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Report/Report-Prefix.pch";
 				INFOPLIST_FILE = "Report/Report-Info.plist";

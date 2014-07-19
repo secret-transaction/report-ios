@@ -7,6 +7,7 @@
         <attribute name="remoteId" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="images" optional="YES" toMany="YES" maxCount="9" deletionRule="Cascade" ordered="YES" destinationEntity="ReportImage" inverseName="report" inverseEntity="ReportImage" syncable="YES"/>
+        <relationship name="primaryImage" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ReportImage" syncable="YES"/>
     </entity>
     <entity name="ReportImage" representedClassName="ReportImage" syncable="YES">
         <attribute name="localUrl" optional="YES" attributeType="String" syncable="YES"/>
@@ -17,7 +18,7 @@
         <relationship name="report" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Report" inverseName="images" inverseEntity="Report" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Report" positionX="-308" positionY="-167" width="128" height="135"/>
+        <element name="Report" positionX="-308" positionY="-167" width="128" height="150"/>
         <element name="ReportImage" positionX="-54" positionY="27" width="128" height="135"/>
     </elements>
 </model>

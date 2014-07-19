@@ -2,7 +2,7 @@
 //  Report.h
 //  Report
 //
-//  Created by Lyndon Michael Bibera on 7/16/14.
+//  Created by Lyndon Michael Bibera on 7/19/14.
 //  Copyright (c) 2014 Secret Transaction Inc. All rights reserved.
 //
 
@@ -16,9 +16,10 @@
 @property (nonatomic, retain) NSDate * dateCreated;
 @property (nonatomic, retain) NSDate * dateLastEdited;
 @property (nonatomic, retain) NSString * detail;
-@property (nonatomic, retain) NSString * title;
 @property (nonatomic, retain) NSString * remoteId;
+@property (nonatomic, retain) NSString * title;
 @property (nonatomic, retain) NSOrderedSet *images;
+@property (nonatomic, retain) ReportImage *primaryImage;
 @end
 
 @interface Report (CoreDataGeneratedAccessors)

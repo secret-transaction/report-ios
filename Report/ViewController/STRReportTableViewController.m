@@ -77,12 +77,20 @@
 {
     Report *newReport = [NSEntityDescription insertNewObjectForEntityForName:EntityReport inManagedObjectContext:self.context];
     newReport.title = @"My Article";
-    newReport.detail = @"Some Details...";
+    newReport.detail = @"Some Details about the article...";
+    newReport.dateCreated = [NSDate new];
+    newReport.dateLastEdited = [NSDate new];
     
-    
+    //TODO: remove dummy image
+    NSString *dummyImage = @"https://fbcdn-sphotos-f-a.akamaihd.net/hphotos-ak-xap1/t1.0-9/15373_4237805801220_7354239875186379846_n.jpg";
     for (int i=0; i<9; i++) {
         ReportImage *img =  [NSEntityDescription insertNewObjectForEntityForName:EntityReportImage inManagedObjectContext:self.context];
         img.report = newReport;
+        img.remotUrl = dummyImage;
+        
+        if (!newReport.primaryImage) {
+            newReport.primaryImage = img;
+        }
     }
     
     self.selectedReport = newReport;

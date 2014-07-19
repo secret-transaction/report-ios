@@ -2,7 +2,7 @@
 //  Report.m
 //  Report
 //
-//  Created by Lyndon Michael Bibera on 7/16/14.
+//  Created by Lyndon Michael Bibera on 7/19/14.
 //  Copyright (c) 2014 Secret Transaction Inc. All rights reserved.
 //
 
@@ -15,8 +15,9 @@
 @dynamic dateCreated;
 @dynamic dateLastEdited;
 @dynamic detail;
-@dynamic title;
 @dynamic remoteId;
+@dynamic title;
 @dynamic images;
+@dynamic primaryImage;
 
 @end

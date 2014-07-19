@@ -265,6 +265,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Images" id="pHS-cv-G2f"/>
                     <connections>
+                        <outlet property="primaryImage" destination="LKR-ZC-iTy" id="zYc-8A-HGr"/>
                         <outletCollection property="imageThumnails" destination="B3B-im-Fq5" id="AI0-qS-XtH"/>
                         <outletCollection property="imageThumnails" destination="gqq-c1-HCo" id="cT7-gz-lIi"/>
                         <outletCollection property="imageThumnails" destination="lzR-Kc-rMl" id="a6x-kp-hFl"/>
@@ -277,47 +278,47 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8gR-4v-B10" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="L8B-E1-jwn">
+                <tapGestureRecognizer numberOfTapsRequired="2" id="L8B-E1-jwn">
                     <connections>
                         <action selector="tapPhoto:" destination="egQ-Ph-kfv" id="RaN-K2-jf8"/>
                     </connections>
                 </tapGestureRecognizer>
-                <tapGestureRecognizer id="7yS-cC-jSw">
+                <tapGestureRecognizer numberOfTapsRequired="2" id="7yS-cC-jSw">
                     <connections>
                         <action selector="tapPhoto:" destination="egQ-Ph-kfv" id="Dx2-zX-FHL"/>
                     </connections>
                 </tapGestureRecognizer>
-                <tapGestureRecognizer id="2M1-dp-jAt">
+                <tapGestureRecognizer numberOfTapsRequired="2" id="2M1-dp-jAt">
                     <connections>
                         <action selector="tapPhoto:" destination="egQ-Ph-kfv" id="Bna-J3-vwo"/>
                     </connections>
                 </tapGestureRecognizer>
-                <tapGestureRecognizer id="5At-uA-FAY">
+                <tapGestureRecognizer numberOfTapsRequired="2" id="5At-uA-FAY">
                     <connections>
                         <action selector="tapPhoto:" destination="egQ-Ph-kfv" id="LJi-CG-0lv"/>
                     </connections>
                 </tapGestureRecognizer>
-                <tapGestureRecognizer id="kTe-Cp-PGS">
+                <tapGestureRecognizer numberOfTapsRequired="2" id="kTe-Cp-PGS">
                     <connections>
                         <action selector="tapPhoto:" destination="egQ-Ph-kfv" id="2Lm-IT-kh6"/>
                     </connections>
                 </tapGestureRecognizer>
-                <tapGestureRecognizer id="Rms-CJ-uOc">
+                <tapGestureRecognizer numberOfTapsRequired="2" id="Rms-CJ-uOc">
                     <connections>
                         <action selector="tapPhoto:" destination="egQ-Ph-kfv" id="jAf-gC-K2m"/>
                     </connections>
                 </tapGestureRecognizer>
-                <tapGestureRecognizer id="Ojx-AY-QSy">
+                <tapGestureRecognizer numberOfTapsRequired="2" id="Ojx-AY-QSy">
                     <connections>
                         <action selector="tapPhoto:" destination="egQ-Ph-kfv" id="3gZ-zC-dcY"/>
                     </connections>
                 </tapGestureRecognizer>
-                <tapGestureRecognizer id="0as-8s-W81">
+                <tapGestureRecognizer numberOfTapsRequired="2" id="0as-8s-W81">
                     <connections>
                         <action selector="tapPhoto:" destination="egQ-Ph-kfv" id="8kA-WJ-gro"/>
                     </connections>
                 </tapGestureRecognizer>
-                <tapGestureRecognizer id="NQf-l6-15k">
+                <tapGestureRecognizer numberOfTapsRequired="2" id="NQf-l6-15k">
                     <connections>
                         <action selector="tapPhoto:" destination="egQ-Ph-kfv" id="fG0-3a-Fe4"/>
                     </connections>

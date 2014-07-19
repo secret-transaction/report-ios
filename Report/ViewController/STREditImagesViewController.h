@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 Secret Transaction Inc. All rights reserved.
 //
 
-@interface STREditImagesViewController : UIViewController
+@interface STREditImagesViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
 @property (strong, nonatomic) Report *report;
 

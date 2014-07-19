@@ -12,6 +12,7 @@
 @interface STREditImagesViewController ()
 
 @property (strong, nonatomic) IBOutletCollection(UIImageView) NSArray *imageThumnails;
+@property (weak, nonatomic) IBOutlet UIImageView *primaryImage;
 
 @end
 
@@ -30,9 +31,12 @@
         for (ReportImage *img in self.report.images) {
             UIImageView *imgView = self.imageThumnails[[self.report.images indexOfObject:img]];
             
-            NSString *i = @"https://fbcdn-sphotos-f-a.akamaihd.net/hphotos-ak-xap1/t1.0-9/15373_4237805801220_7354239875186379846_n.jpg";
-            
-            [STRAsyncImageDownloader loadFromURL:i toImageView:imgView];
+            //TODO: try to load from local first
+            [STRAsyncImageDownloader loadFromURL:img.remotUrl toImageView:imgView];
+        }
+        
+        if (self.report.primaryImage) {
+            [STRAsyncImageDownloader loadFromURL:self.report.primaryImage.remotUrl toImageView:self.primaryImage];
         }
     }
 }
@@ -41,7 +45,15 @@
 {
     UIView *image = sender.view;
     NSLog(@"Start Camera for: %lu", (unsigned long)[self.imageThumnails indexOfObject:image]);
-    [image setHidden:YES];
+
+    UIImagePickerController *picker = [UIImagePickerController new];
+    picker.delegate = self;
+    picker.allowsEditing = YES;
+    //not available on emulator
+    //picker.sourceType = UIImagePickerControllerSourceTypeCamera;
+    picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    
+    [self presentViewController:picker animated:YES completion:NULL];
 }
 
 #pragma mark - Navigation

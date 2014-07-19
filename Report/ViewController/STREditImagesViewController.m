@@ -37,6 +37,13 @@
     }
 }
 
+- (IBAction)tapPhoto:(UITapGestureRecognizer *)sender
+{
+    UIView *image = sender.view;
+    NSLog(@"Start Camera for: %lu", (unsigned long)[self.imageThumnails indexOfObject:image]);
+    [image setHidden:YES];
+}
+
 #pragma mark - Navigation
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender

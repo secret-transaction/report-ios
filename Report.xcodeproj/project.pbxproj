@@ -515,6 +515,9 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Secret Transaction Inc.";
 				TargetAttributes = {
+					E97FF1151966EDFB004C6F09 = {
+						DevelopmentTeam = 65SU2RD4AG;
+					};
 					E97FF1361966EDFB004C6F09 = {
 						TestTargetID = E97FF1151966EDFB004C6F09;
 					};

@@ -14,6 +14,9 @@
 @property (strong, nonatomic) IBOutletCollection(UIImageView) NSArray *imageThumnails;
 @property (weak, nonatomic) IBOutlet UIImageView *primaryImage;
 
+//lame way of tracking which image was tapped
+@property (weak, nonatomic) UIImageView *tappedView;
+
 @end
 
 @implementation STREditImagesViewController
@@ -45,15 +48,34 @@
 {
     UIView *image = sender.view;
     NSLog(@"Start Camera for: %lu", (unsigned long)[self.imageThumnails indexOfObject:image]);
+    self.tappedView =  (UIImageView *)image;
 
     UIImagePickerController *picker = [UIImagePickerController new];
     picker.delegate = self;
     picker.allowsEditing = YES;
-    //not available on emulator
-    //picker.sourceType = UIImagePickerControllerSourceTypeCamera;
-    picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    
+    //finally got to make this work on device
+    //borrowed some company dev profile
+    picker.sourceType = UIImagePickerControllerSourceTypeCamera;
+    
+    //use this when picking through photo lib
+    //picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
     
     [self presentViewController:picker animated:YES completion:NULL];
+}
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
+{
+    NSLog(@"Picked Image");
+    UIImage *chosenImage = info[UIImagePickerControllerEditedImage];
+    
+    if (self.tappedView) {
+        self.tappedView.image = chosenImage;
+    }
+    self.tappedView = nil;
+    
+    [picker dismissViewControllerAnimated:YES completion:NULL];
+    
 }
 
 #pragma mark - Navigation

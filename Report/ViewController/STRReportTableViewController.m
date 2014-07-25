@@ -122,8 +122,7 @@
     NSLog(@"Unwind Segue:%@", segueId);
     
     if ([segueId isEqualToString:UnwindSegueReportTable]) {
-        //TODO: find a better way to reload just a single cell
-        //instead of the entire table
+        [self.fetchedResultsController performFetch:nil];
         [self.tableView reloadData];
     }
 }
